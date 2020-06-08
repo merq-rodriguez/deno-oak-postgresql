@@ -5,10 +5,7 @@ class UserController {
     async findAll(ctx: any): Promise<any> {
         ctx.response.status = 200;
         ctx.response.body = {
-            meta: {
-                code: 200,
-                status: "Ok",
-            },
+            meta: { code: 200, status: "Ok",},
             data: await userService.findAll()
         }
     }
@@ -16,35 +13,24 @@ class UserController {
     async findById(ctx: any): Promise<any> {
         ctx.response.status = 200;
         ctx.response.body = {
-            meta: {
-                code: 200,
-                status: "Ok",
-            },
+            meta: { code: 200, status: "Ok",},
             data: await userService.findById(ctx.params.id)
         }
     }
 
     async create(ctx: any): Promise<any> {
         await userService.create(ctx);
-
         ctx.response.status = 201;
         ctx.response.body = {
-            meta: {
-                code: 201,
-                status: "Created",
-            }
+            meta: { code: 201, status: "Created" }
         }
     }
 
     async update(ctx: any): Promise<any> {
         await userService.update(ctx);
-
         ctx.response.status = 200;
         ctx.response.body = {
-            meta: {
-                code: 200,
-                status: "Ok",
-            }
+            meta: { code: 200, status: "Ok",}
         }
     }
 
@@ -53,10 +39,7 @@ class UserController {
 
         ctx.response.status = 200;
         ctx.response.body = {
-            meta: {
-                code: 200,
-                status: "Ok",
-            }
+            meta: { code: 200, status: "Ok",}
         }
     }
 }
